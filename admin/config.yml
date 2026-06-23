@@ -2,9 +2,9 @@
 # Vervang hieronder JOUW-GITHUB en de OAuth-URL (zie handleiding stap 4).
 backend:
   name: github
-  repo: JOUW-GITHUB/elsec-website     # bv. nicohermans/elsec-website
+  repo: Robb364/elsec-website     # bv. nicohermans/elsec-website
   branch: main
-  base_url: https://elsec-oauth.JOUW-SUBDOMEIN.workers.dev   # OAuth-worker uit de handleiding
+  base_url: https://elsec-oauth.robbert-gilis.workers.dev   # OAuth-worker uit de handleiding
 
 # Taal van het beheerpaneel
 locale: nl
