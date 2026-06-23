@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elsec — Elektriciteitswerken | Nico Hermans</title>
+<meta name="description" content="Elsec — algemene elektriciteitswerken, zekeringskasten, zonnepanelen, thuisbatterijen en airco in Oost-Vlaams-Brabant. Nico Hermans.">
+<style>
+  :root{
+    --blauw:#1f3a5f; --blauw-licht:#2f6fb0; --geel:#f5b50a;
+    --tekst:#1c2531; --grijs:#5c6773; --bg:#f6f8fb; --wit:#fff;
+    --rand:#e3e8ef; --radius:14px; --schaduw:0 6px 24px rgba(20,40,70,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--tekst);background:var(--bg);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rand)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-weight:800;font-size:1.4rem;letter-spacing:.5px;color:var(--blauw);text-decoration:none}
+  .logo span{color:var(--geel)}
+  .nav-links{display:flex;gap:26px}
+  .nav-links a{text-decoration:none;color:var(--grijs);font-weight:600;font-size:.95rem}
+  .nav-links a:hover{color:var(--blauw)}
+  .nav-cta{background:var(--blauw);color:#fff;padding:9px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.9rem}
+  @media(max-width:720px){.nav-links{display:none}}
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--blauw),var(--blauw-licht));color:#fff;padding:74px 0 84px}
+  .hero h1{font-size:2.6rem;line-height:1.15;max-width:18ch}
+  .hero .slogan{font-size:1.25rem;opacity:.92;margin-top:14px;max-width:40ch}
+  .hero .knoppen{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .1s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-geel{background:var(--geel);color:#1c2531}
+  .btn-rand{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+  @media(max-width:720px){.hero h1{font-size:2rem}}
+  /* Secties */
+  section{padding:64px 0}
+  .sec-titel{font-size:1.8rem;color:var(--blauw);margin-bottom:8px}
+  .sec-sub{color:var(--grijs);margin-bottom:34px;max-width:60ch}
+  #over .intro{font-size:1.12rem;max-width:65ch;color:#2b3645}
+  /* Diensten */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .kaart{background:var(--wit);border:1px solid var(--rand);border-radius:var(--radius);padding:24px;box-shadow:var(--schaduw)}
+  .kaart h3{color:var(--blauw);font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .kaart .dot{width:10px;height:10px;border-radius:50%;background:var(--geel);flex:none}
+  .kaart p{color:var(--grijs);font-size:.97rem}
+  /* Slideshow */
+  .slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--schaduw);background:#000;aspect-ratio:3/2}
+  .slides{display:flex;height:100%;transition:transform .5s ease}
+  .slide{min-width:100%;position:relative}
+  .slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .slide .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 16px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.65))}
+  .pijl{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--blauw);display:flex;align-items:center;justify-content:center}
+  .pijl:hover{background:#fff}
+  .pijl.prev{left:14px}.pijl.next{right:14px}
+  .dots{display:flex;gap:8px;justify-content:center;margin-top:16px}
+  .dots button{width:11px;height:11px;border-radius:50%;border:none;background:#c7d0db;cursor:pointer}
+  .dots button.actief{background:var(--blauw)}
+  /* Contact */
+  #contact{background:var(--wit);border-top:1px solid var(--rand)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:780px){.contact-grid{grid-template-columns:1fr}}
+  .gegevens p{margin-bottom:12px;color:#2b3645}
+  .gegevens strong{color:var(--blauw)}
+  .gegevens a{color:var(--blauw-licht);text-decoration:none;font-weight:600}
+  form label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 5px;color:#2b3645}
+  form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--rand);border-radius:10px;font:inherit;background:var(--bg)}
+  form input:focus,form textarea:focus{outline:2px solid var(--blauw-licht);border-color:transparent}
+  form button{margin-top:18px;width:100%;background:var(--blauw);color:#fff;border:none;padding:14px;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer}
+  form button:hover{background:#16294a}
+  .formstatus{margin-top:12px;font-weight:600;display:none}
+  /* Footer */
+  footer{background:var(--blauw);color:#cdd8e6;text-align:center;padding:28px 0;font-size:.9rem}
+  footer a{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">El<span>sec</span></a>
+    <nav class="nav-links">
+      <a href="#over">Over</a>
+      <a href="#diensten">Diensten</a>
+      <a href="#werk">Realisaties</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Vraag offerte</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 id="hero-titel">Elektriciteitswerken waar u op kan rekenen</h1>
+    <p class="slogan" id="hero-slogan"></p>
+    <div class="knoppen">
+      <a href="#contact" class="btn btn-geel">Vrijblijvende offerte</a>
+      <a href="#diensten" class="btn btn-rand">Bekijk diensten</a>
+    </div>
+  </div>
+</section>
+
+<section id="over">
+  <div class="wrap">
+    <h2 class="sec-titel">Over Elsec</h2>
+    <p class="intro" id="over-intro"></p>
+  </div>
+</section>
+
+<section id="diensten" style="background:#eef2f8">
+  <div class="wrap">
+    <h2 class="sec-titel">Onze diensten</h2>
+    <p class="sec-sub">Eén aanspreekpunt voor al uw elektrowerk — van klein tot groot.</p>
+    <div class="grid" id="diensten-grid"></div>
+  </div>
+</section>
+
+<section id="werk">
+  <div class="wrap">
+    <h2 class="sec-titel">Realisaties</h2>
+    <p class="sec-sub">Een greep uit recent uitgevoerde installaties.</p>
+    <div class="slider">
+      <div class="slides" id="slides"></div>
+      <button class="pijl prev" aria-label="Vorige" onclick="stap(-1)">‹</button>
+      <button class="pijl next" aria-label="Volgende" onclick="stap(1)">›</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="sec-titel">Contact</h2>
+    <p class="sec-sub">Vragen of een offerte nodig? Vul het formulier in of bel/mail rechtstreeks.</p>
+    <div class="contact-grid">
+      <div class="gegevens" id="gegevens"></div>
+      <form id="contactform">
+        <label for="naam">Naam</label>
+        <input id="naam" name="naam" required>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required>
+        <label for="tel">Telefoon</label>
+        <input id="tel" name="telefoon">
+        <label for="bericht">Uw vraag</label>
+        <textarea id="bericht" name="bericht" rows="4" required></textarea>
+        <button type="submit">Verstuur bericht</button>
+        <p class="formstatus" id="formstatus"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="jaar"></span> Elsec — Nico Hermans · <span id="foot-btw"></span></p>
+  </div>
+</footer>
+
+<script>
+let huidige = 0, aantalSlides = 0;
+function stap(r){ toon(huidige + r); }
+function toon(i){
+  if(aantalSlides===0) return;
+  huidige = (i + aantalSlides) % aantalSlides;
+  document.getElementById('slides').style.transform = `translateX(-${huidige*100}%)`;
+  document.querySelectorAll('#dots button').forEach((d,n)=>d.classList.toggle('actief', n===huidige));
+}
+function esc(s){ return (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+fetch('content/site.json?_=' + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    document.title = `${d.bedrijf} — Elektriciteitswerken | ${d.contact.naam}`;
+    document.getElementById('hero-slogan').textContent = d.slogan || '';
+    document.getElementById('over-intro').textContent = d.intro || '';
+    document.getElementById('jaar').textContent = new Date().getFullYear();
+    document.getElementById('foot-btw').textContent = 'BTW ' + (d.contact.btw || '');
+
+    // Diensten
+    document.getElementById('diensten-grid').innerHTML = (d.diensten||[]).map(s =>
+      `<div class="kaart"><h3><span class="dot"></span>${esc(s.titel)}</h3><p>${esc(s.tekst)}</p></div>`).join('');
+
+    // Slides
+    const sl = d.slides || [];
+    aantalSlides = sl.length;
+    document.getElementById('slides').innerHTML = sl.map(s =>
+      `<div class="slide"><img src="${esc(s.afbeelding)}" alt="${esc(s.onderschrift)}" loading="lazy"><div class="cap">${esc(s.onderschrift)}</div></div>`).join('');
+    document.getElementById('dots').innerHTML = sl.map((_,n)=>
+      `<button onclick="toon(${n})" class="${n===0?'actief':''}" aria-label="Foto ${n+1}"></button>`).join('');
+    toon(0);
+    if(aantalSlides>1) setInterval(()=>stap(1), 6000);
+
+    // Contactgegevens
+    const c = d.contact;
+    let g = `<p><strong>${esc(c.naam)}</strong><br>${esc(d.bedrijf)} — eenmanszaak</p>`;
+    if(c.telefoon) g += `<p><strong>Tel:</strong> <a href="tel:${esc(c.telefoon.replace(/\s/g,''))}">${esc(c.telefoon)}</a></p>`;
+    if(c.email) g += `<p><strong>E-mail:</strong> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`;
+    if(c.regio) g += `<p><strong>Werkgebied:</strong> ${esc(c.regio)}</p>`;
+    if(c.btw) g += `<p><strong>BTW:</strong> ${esc(c.btw)}</p>`;
+    document.getElementById('gegevens').innerHTML = g;
+
+    // Contactformulier (Web3Forms)
+    const form = document.getElementById('contactform');
+    const status = document.getElementById('formstatus');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.style.display='block'; status.style.color='#5c6773'; status.textContent='Versturen…';
+      const key = d.web3forms_key || '';
+      if(!key || key.startsWith('VERVANG')){
+        // Fallback: open mailprogramma
+        const b = `Naam: ${form.naam.value}\nE-mail: ${form.email.value}\nTelefoon: ${form.tel.value}\n\n${form.bericht.value}`;
+        window.location.href = `mailto:${c.email}?subject=Aanvraag via website&body=${encodeURIComponent(b)}`;
+        status.style.color='#5c6773'; status.textContent='Uw mailprogramma wordt geopend…';
+        return;
+      }
+      try{
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({
+            access_key:key, subject:'Nieuwe aanvraag via Elsec-website',
+            from_name:form.naam.value, name:form.naam.value, email:form.email.value,
+            telefoon:form.tel.value, bericht:form.bericht.value
+          })
+        });
+        const j = await res.json();
+        if(j.success){ status.style.color='#15843a'; status.textContent='Bedankt! Uw bericht is verstuurd.'; form.reset(); }
+        else { status.style.color='#c0392b'; status.textContent='Er ging iets mis. Probeer opnieuw of mail rechtstreeks.'; }
+      }catch(err){ status.style.color='#c0392b'; status.textContent='Er ging iets mis. Probeer opnieuw of mail rechtstreeks.'; }
+    });
+  })
+  .catch(()=>{ document.getElementById('over-intro').textContent = 'Inhoud kon niet geladen worden.'; });
+</script>
+</body>
+</html>

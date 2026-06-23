@@ -1,0 +1,26 @@
+{
+  "bedrijf": "Elsec",
+  "slogan": "Algemene elektriciteitswerken in Oost-Vlaams-Brabant",
+  "intro": "Elsec is de eenmanszaak van Nico Hermans, gespecialiseerd elektrotechnicus. Van een nieuwe zekeringskast tot zonnepanelen, airco en thuisbatterijen: u krijgt persoonlijk en vakkundig advies, een nette installatie en een eerlijke prijs. Particulier of professioneel — neem gerust vrijblijvend contact op.",
+  "diensten": [
+    { "titel": "Zekeringskasten", "tekst": "Plaatsing, vernieuwing en uitbreiding van zekeringskasten, volledig volgens het AREI. Inclusief keuring en conformiteitsverslag." },
+    { "titel": "Algemene elektriciteitswerken", "tekst": "Volledige of gedeeltelijke elektrische installaties, renovaties, bijplaatsen van stopcontacten, verlichting en herstellingen." },
+    { "titel": "Zonnepanelen", "tekst": "Advies, plaatsing en aansluiting van fotovoltaische zonnepanelen met omvormer, afgestemd op uw verbruik en dak." },
+    { "titel": "Thuisbatterijen", "tekst": "Installatie van thuisbatterijen zodat u uw eigen zonne-energie maximaal benut en minder afhankelijk bent van het net." },
+    { "titel": "Airco", "tekst": "Levering en installatie van energiezuinige aircos voor verkoeling in de zomer en verwarming in het tussenseizoen." },
+    { "titel": "Laadpalen & meer", "tekst": "Laadpalen voor elektrische wagens, domotica en allerlei kleinere elektrowerken. Vraag het gerust — veel is mogelijk." }
+  ],
+  "slides": [
+    { "afbeelding": "media/slide-1.svg", "onderschrift": "Nieuwe zekeringskast — netjes volgens AREI" },
+    { "afbeelding": "media/slide-2.svg", "onderschrift": "Omvormer en thuisbatterij voor zonne-energie" },
+    { "afbeelding": "media/slide-3.svg", "onderschrift": "Airco-buitenunit — verkoeling en verwarming" }
+  ],
+  "contact": {
+    "naam": "Nico Hermans",
+    "telefoon": "",
+    "email": "elsec.nico@gmail.com",
+    "regio": "Oost-Vlaams-Brabant",
+    "btw": "BE 0837.524.625"
+  },
+  "web3forms_key": "VERVANG-DOOR-JE-WEB3FORMS-ACCESS-KEY"
+}

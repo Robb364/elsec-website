@@ -1,0 +1,57 @@
+# ====== Decap CMS configuratie ======
+# Vervang hieronder JOUW-GITHUB en de OAuth-URL (zie handleiding stap 4).
+backend:
+  name: github
+  repo: JOUW-GITHUB/elsec-website     # bv. nicohermans/elsec-website
+  branch: main
+  base_url: https://elsec-oauth.JOUW-SUBDOMEIN.workers.dev   # OAuth-worker uit de handleiding
+
+# Taal van het beheerpaneel
+locale: nl
+
+# Waar geuploade foto's terechtkomen
+media_folder: "media"
+public_folder: "/media"
+
+# Toon een nette commit-boodschap
+site_url: https://elsec.be
+display_url: https://elsec.be
+
+collections:
+  - name: site
+    label: "Website-inhoud"
+    files:
+      - name: inhoud
+        label: "Pagina-inhoud bewerken"
+        file: "content/site.json"
+        format: json
+        fields:
+          - { label: "Bedrijfsnaam", name: bedrijf, widget: string }
+          - { label: "Slogan (onder de titel)", name: slogan, widget: string }
+          - { label: "Intro-tekst (Over Elsec)", name: intro, widget: text }
+          - label: "Diensten"
+            name: diensten
+            widget: list
+            label_singular: "dienst"
+            summary: "{{fields.titel}}"
+            fields:
+              - { label: "Titel", name: titel, widget: string }
+              - { label: "Beschrijving", name: tekst, widget: text }
+          - label: "Slideshow-foto's"
+            name: slides
+            widget: list
+            label_singular: "foto"
+            summary: "{{fields.onderschrift}}"
+            fields:
+              - { label: "Foto", name: afbeelding, widget: image }
+              - { label: "Onderschrift", name: onderschrift, widget: string }
+          - label: "Contactgegevens"
+            name: contact
+            widget: object
+            fields:
+              - { label: "Naam", name: naam, widget: string }
+              - { label: "Telefoon", name: telefoon, widget: string, required: false }
+              - { label: "E-mail", name: email, widget: string }
+              - { label: "Werkgebied", name: regio, widget: string }
+              - { label: "BTW-nummer", name: btw, widget: string }
+          - { label: "Web3Forms sleutel (niet aanpassen tenzij gevraagd)", name: web3forms_key, widget: string, required: false }
