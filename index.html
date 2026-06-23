@@ -3,8 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elsec — Elektriciteitswerken | Nico Hermans</title>
-<meta name="description" content="Elsec — algemene elektriciteitswerken, zekeringskasten, zonnepanelen, thuisbatterijen en airco in Oost-Vlaams-Brabant. Nico Hermans.">
+<title>ELSEC — Elektricien in Oost-Vlaams-Brabant | Nico Hermans</title>
+<meta name="description" content="Elektricien in Oost-Vlaams-Brabant voor zekeringskasten, zonnepanelen, thuisbatterijen, airco en laadpalen. ELSEC — Nico Hermans. Vraag vrijblijvend een offerte.">
+<meta name="keywords" content="elektricien Oost-Vlaams-Brabant, zekeringskast, zonnepanelen, thuisbatterij, airco, laadpaal, AREI keuring, ELSEC, Nico Hermans">
+<meta name="author" content="Nico Hermans — ELSEC">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="canonical" href="https://elsec.be/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231f3a5f'/><text x='16' y='23' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>E</text></svg>">
+<!-- Open Graph (sociale media) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="ELSEC">
+<meta property="og:title" content="ELSEC — Elektricien in Oost-Vlaams-Brabant">
+<meta property="og:description" content="Zekeringskasten, zonnepanelen, thuisbatterijen, airco en algemene elektriciteitswerken. Vraag vrijblijvend een offerte.">
+<meta property="og:url" content="https://elsec.be/">
+<meta property="og:image" content="https://elsec.be/media/slide-1.svg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Gestructureerde data voor Google (lokaal bedrijf) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "ELSEC",
+  "image": "https://elsec.be/media/slide-1.svg",
+  "url": "https://elsec.be",
+  "email": "elsec.nico@gmail.com",
+  "founder": "Nico Hermans",
+  "description": "Algemene elektriciteitswerken, zekeringskasten, zonnepanelen, thuisbatterijen, airco en laadpalen in Oost-Vlaams-Brabant.",
+  "areaServed": { "@type": "AdministrativeArea", "name": "Oost-Vlaams-Brabant" },
+  "vatID": "BE 0837.524.625",
+  "priceRange": "$$",
+  "knowsAbout": ["Zekeringskasten", "AREI-keuring", "Zonnepanelen", "Thuisbatterijen", "Airco", "Laadpalen", "Algemene elektriciteitswerken"]
+}
+</script>
 <style>
   :root{
     --blauw:#1f3a5f; --blauw-licht:#2f6fb0; --geel:#f5b50a;
@@ -19,8 +51,7 @@
   /* Header */
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rand)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .logo{font-weight:800;font-size:1.4rem;letter-spacing:.5px;color:var(--blauw);text-decoration:none}
-  .logo span{color:var(--geel)}
+  .logo{font-weight:800;font-size:1.4rem;letter-spacing:2px;text-transform:uppercase;color:var(--blauw);text-decoration:none}
   .nav-links{display:flex;gap:26px}
   .nav-links a{text-decoration:none;color:var(--grijs);font-weight:600;font-size:.95rem}
   .nav-links a:hover{color:var(--blauw)}
@@ -80,7 +111,7 @@
 <body>
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo">El<span>sec</span></a>
+    <a href="#" class="logo">ELSEC</a>
     <nav class="nav-links">
       <a href="#over">Over</a>
       <a href="#diensten">Diensten</a>
@@ -172,7 +203,7 @@ function esc(s){ return (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','
 fetch('content/site.json?_=' + Date.now())
   .then(r => r.json())
   .then(d => {
-    document.title = `${d.bedrijf} — Elektriciteitswerken | ${d.contact.naam}`;
+    document.title = `ELSEC — Elektricien in ${d.contact.regio} | ${d.contact.naam}`;
     document.getElementById('hero-slogan').textContent = d.slogan || '';
     document.getElementById('over-intro').textContent = d.intro || '';
     document.getElementById('jaar').textContent = new Date().getFullYear();
