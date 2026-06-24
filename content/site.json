@@ -31,15 +31,15 @@
   "slides": [
     {
       "afbeelding": "/media/zonnepanelen-woning.jpg",
-      "onderschrift": "Zwarte zonnepanelen op een nieuwbouwwoning"
+      "onderschrift": "Plaatsing zonnepanelen"
     },
     {
       "afbeelding": "/media/zonnepanelen-groot-dak.jpg",
-      "onderschrift": "Zonnepanelen op een groot dak — luchtfoto"
+      "onderschrift": "Plaatsing zonnepanelen"
     },
     {
       "afbeelding": "/media/zonnepanelen-metalen-dak.jpg",
-      "onderschrift": "Zonnepanelen op een metalen bedrijfsdak"
+      "onderschrift": "Plaatsing zonnepanelen"
     },
     {
       "afbeelding": "/media/zekeringskast.jpg",
@@ -55,7 +55,7 @@
     },
     {
       "afbeelding": "/media/omvormer-thuisbatterij.jpg",
-      "onderschrift": "Omvormer en thuisbatterij, strak weggewerkt"
+      "onderschrift": "Omvormer en thuisbatterij"
     },
     {
       "afbeelding": "/media/airco-buitenunit-kaysun.jpg",
@@ -63,7 +63,7 @@
     },
     {
       "afbeelding": "/media/airco-omkasting.jpg",
-      "onderschrift": "Discrete omkasting rond de airco-buitenunit"
+      "onderschrift": "Airco-buitenunit"
     }
   ],
   "contact": {
